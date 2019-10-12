@@ -1,0 +1,124 @@
+*{
+  font-family: "Verdana";
+  padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+  text-align: center;
+}
+.container {
+  display: grid;
+	grid-template-columns: 1fr;
+	justify-items: center;
+}
+.wrapper {
+	width: 90%;
+	max-width: 1200px;
+}
+.wrapper section:nth-child(1), h2 {
+	margin: 20px;
+}
+.wrapper section:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);/*1fr 1fr 1fr*/
+  grid-template-rows: 2;
+  grid-template-areas:
+  "header main document"
+  "sidebar leftbar footer";
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+@media screen and (max-width: 768px) {
+	.wrapper section:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);/*1fr 1fr 1fr*/
+    grid-template-rows: 3;
+    grid-template-areas:
+    "header main"
+    "document sidebar"
+    "leftbar footer";
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+	}
+}
+@media screen and (max-width: 528px) {
+	.wrapper section:nth-child(2) {
+		grid-template-columns: 1fr;
+    grid-template-rows: 6;
+    grid-template-areas:
+    "header"
+    "main"
+    "document"
+    "sidebar"
+    "leftbar"
+    "footer";
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+	}
+}
+.item-a,.item-b,.item-c,.item-d,.item-e,.item-f,.item-g {
+  background-color: #fff;
+  border:1px solid #000;
+  padding:20px;
+  font-size: 12px;
+}
+.button {
+	margin-top: 10px;
+	padding: 7px 16px;
+	color: #fff;
+  border: 1px solid #7777;
+	background-color: lightgreen;
+	align-self: end;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+h2 {
+	margin-bottom: 10px;
+}
+p {
+	line-height: 1.5em;
+	margin: 5px;
+}
+.item-a {
+  grid-area: header;
+  display: grid;
+  justify-items: center;
+  border: 1px solid #7777;
+  padding: 15px 0;
+}
+.item-b {
+  grid-area: main;
+  display: grid;
+  justify-items: center;
+  border: 1px solid #7777;
+  padding: 15px 0;
+}
+.item-c {
+  grid-area: document;
+  display: grid;
+  justify-items: center;
+  border: 1px solid #7777;
+  padding: 15px 0;
+}
+.item-d {
+  grid-area: sidebar;
+  display: grid;
+  justify-items: center;
+  border: 1px solid #7777;
+  padding: 15px 0;
+}
+.item-e {
+  grid-area: leftbar;
+  display: grid;
+  justify-items: center;
+  border: 1px solid #7777;
+  padding: 15px 0;
+}
+.item-f {
+  grid-area: footer;
+  display: grid;
+  justify-items: center;
+  border: 1px solid #7777;
+  padding: 15px 0;
+}
